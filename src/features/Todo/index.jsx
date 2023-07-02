@@ -20,7 +20,7 @@ function TodoFeature(props) {
       status: "new",
     },
   ];
-  const [todoList, setTodoList] = useState(initToodoList);
+  const [todoList, setTodoList] = useState(initToodoList); 
   const [filterState, setFilterState] = useState('all')
   const handleClickTodoList = (item, idx) => {
     const newTodoList = [...todoList];
