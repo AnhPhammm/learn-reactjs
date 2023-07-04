@@ -4,6 +4,7 @@ import TodoFeature from "./features/Todo";
 import AlbumFeature from "./features/Album";
 import { Route, Link, NavLink } from "react-router-dom";
 import { Redirect, Switch } from "react-router-dom/cjs/react-router-dom";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -23,12 +24,14 @@ function App() {
         </NavLink>
       </div>
       <Switch>
-        <Redirect from="/home" to="/" exact/>
-        <Redirect from="/post-list/:postId" to="/post/:postId" exact/>
+        <Redirect from="/home" to="/" exact />
+        <Redirect from="/post-list/:postId" to="/post/:postId" exact />
 
-        <Route path="/" component={TodoFeature} exact/>
+        <Route path="/" component={TodoFeature} exact />
         <Route path="/todos" component={TodoFeature} />
         <Route path="/albums" component={AlbumFeature} />
+
+        <Route component={NotFound} />
       </Switch>
       Footer
     </div>
