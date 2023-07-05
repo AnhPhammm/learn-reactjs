@@ -1,12 +1,24 @@
-import logo from "./logo.svg";
-import "./App.css";
-import TodoFeature from "./features/Todo";
-import AlbumFeature from "./features/Album";
-import { Route, Link, NavLink } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
 import { Redirect, Switch } from "react-router-dom/cjs/react-router-dom";
+import "./App.css";
 import NotFound from "./components/NotFound";
+import AlbumFeature from "./features/Album";
+import TodoFeature from "./features/Todo";
+import { useEffect } from "react";
+import productApi from "./api/productApi";
 
 function App() {
+  useEffect(() => {
+    const data = async () => {
+      const params = {
+        _limit: 10,
+      };
+      const productList = await productApi.getAll(params);
+      console.log(productList);
+    };
+    data();
+  }, []);
+
   return (
     <div className="App">
       Header
