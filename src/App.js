@@ -32,7 +32,7 @@ function App() {
       >
         <NavLink to="/todos">Todo</NavLink>
         <NavLink to="/albums" activeClassName="active-menu">
-          Albums
+          Albumssss
         </NavLink>
       </div>
       <Switch>
